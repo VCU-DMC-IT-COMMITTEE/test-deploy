@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import GalleryImage from "@/components/Gallery/GalleryImage";
+import AlbumGallery from "@/components/Gallery/AlbumGallery";
 import { eventAlbums } from "@/data/gallery";
 
 type AlbumPageProps = { params: { slug: string } };
@@ -27,11 +27,7 @@ export default function AlbumPage({ params }: AlbumPageProps) {
         </Link>
         <h1 className="mt-6 max-w-5xl text-4xl font-black leading-tight md:text-6xl">{album.title}</h1>
         <p className="mt-6 text-lg text-zinc-300">Keynote Speaker: {album.keynoteSpeaker}</p>
-        <div className="mt-12 grid gap-8">
-          {album.photos.map((photo, index) => (
-            <GalleryImage key={photo.src} photo={photo} priority={index === 0} contain />
-          ))}
-        </div>
+        <AlbumGallery photos={album.photos} />
       </div>
     </main>
   );

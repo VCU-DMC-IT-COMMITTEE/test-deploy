@@ -8,16 +8,18 @@ export default function GalleryImage({
   photo,
   priority = false,
   contain = false,
+  lightbox = false,
 }: {
   photo: GalleryPhoto;
   priority?: boolean;
   contain?: boolean;
+  lightbox?: boolean;
 }) {
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="relative aspect-[3/2] overflow-hidden bg-zinc-900">
+    <div className={`relative overflow-hidden bg-zinc-900 ${lightbox ? "h-full w-full" : "aspect-[3/2]"}`}>
       {failed ? (
         <div role="status" className="flex h-full items-center justify-center p-6 text-center text-sm text-zinc-300">
           Photograph unavailable. Please try again later.
@@ -36,7 +38,7 @@ export default function GalleryImage({
             unoptimized
             priority={priority}
             loading={priority ? "eager" : "lazy"}
-            sizes={contain ? "(max-width: 1280px) 100vw, 1280px" : "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"}
+            sizes={lightbox ? "100vw" : "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"}
             className={`${contain ? "object-contain" : "object-cover"} ${loaded ? "opacity-100" : "opacity-0"}`}
             onLoad={() => setLoaded(true)}
             onError={() => setFailed(true)}

@@ -23,6 +23,15 @@ export const eventAlbums: EventAlbum[] = [
     title: "Mastercard × Virginia Credit Union General Body Meeting",
     keynoteSpeaker: "Bo Jackson",
     cover: mastercardCover,
-    photos: [mastercardCover],
+    photos: [
+      mastercardCover,
+      ...Array.from({ length: 11 }, (_, index): GalleryPhoto => {
+        const number = String(index + 1).padStart(2, "0");
+        return {
+          src: `https://d6uqhuj15c85p.cloudfront.net/Events/mastercard-vacu-2026/photo-${number}.webp`,
+          alt: `Mastercard × Virginia Credit Union General Body Meeting with keynote speaker Bo Jackson, event photograph ${index + 1}`,
+        };
+      }),
+    ],
   },
 ];
