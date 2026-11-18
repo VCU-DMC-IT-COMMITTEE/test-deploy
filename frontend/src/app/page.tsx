@@ -160,13 +160,13 @@ const programPreviews = [
 ];
 
 const sundaySpotlight = {
-  name: "Samir Knight",
-  highlight: "AWS Ambassador | IT Support Intern",
+  name: "Kyree Currie",
+  highlight: "1st Place | Entrepreneur Active Ventures | VCU DaVinci Pitch Competition",
   reason:
-    "Today's Sunday Spotlight is Samir Knight, who recently received an offer to serve as an IT Support Intern at Amazon Web Services. Samir is also an AWS Ambassador, a high-level technical professional highlighted by cloud proficiency and expertise. What an achievement of excellence! We celebrate this milestone in your career journey with you, Samir!",
+    "This week's Sunday Spotlight is Kyree Currie. Kyree recently competed in the VCU DaVinci Pitch Competition, representing his establishment @reezy.studios against 18 other companies. He ranked first in the Entrepreneur Active Ventures category. What an achievement of excellence! We celebrate this milestone in your career journey with you, Kyree!",
   quote:
-    "Being part of DMC has encouraged me to step outside my comfort zone, connect with other driven students, and continue growing professionally. Through my experiences in IT support, undergraduate research, and as an AWS Student Builder Campus Leader, I’ve had opportunities to develop my technical, communication, and leadership skills. DMC has reinforced the importance of networking, and taking advantage of opportunities that push me toward my career goals.",
-  flyer: "/images/spotlights/samir-knight-aws.jpg",
+    "DMC has played a crucial role in my professional development along on this journey. Being able to understand and utilize the important skills of networking and having a clean image have carried me a long way in my entrepreneurial career",
+  flyer: "/images/spotlights/kyree-currie.jpg",
 };
 
 function CountUpNumber({ target }: { target: number }) {
