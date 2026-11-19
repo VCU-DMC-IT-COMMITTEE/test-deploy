@@ -4,19 +4,21 @@ import { notFound } from "next/navigation";
 import AlbumGallery from "@/components/Gallery/AlbumGallery";
 import { eventAlbums } from "@/data/gallery";
 
-type AlbumPageProps = { params: { slug: string } };
+type AlbumPageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return eventAlbums.map(({ slug }) => ({ slug }));
 }
 
-export function generateMetadata({ params }: AlbumPageProps): Metadata {
-  const album = eventAlbums.find(({ slug }) => slug === params.slug);
+export async function generateMetadata({ params }: AlbumPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const album = eventAlbums.find((album) => album.slug === slug);
   return { title: album ? `${album.title} | DMC Gallery` : "Album not found | DMC Gallery" };
 }
 
-export default function AlbumPage({ params }: AlbumPageProps) {
-  const album = eventAlbums.find(({ slug }) => slug === params.slug);
+export default async function AlbumPage({ params }: AlbumPageProps) {
+  const { slug } = await params;
+  const album = eventAlbums.find((album) => album.slug === slug);
   if (!album) notFound();
 
   return (
