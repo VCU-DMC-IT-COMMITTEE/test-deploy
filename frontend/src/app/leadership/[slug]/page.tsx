@@ -4,9 +4,9 @@ import { Linkedin } from "lucide-react";
 import { getLeaderBySlug, leaders } from "../leadershipData";
 
 type LeaderPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export function generateStaticParams() {
@@ -15,8 +15,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function LeaderBiographyPage({ params }: LeaderPageProps) {
-  const leader = getLeaderBySlug(params.slug);
+export default async function LeaderBiographyPage({ params }: LeaderPageProps) {
+  const { slug } = await params;
+  const leader = getLeaderBySlug(slug);
 
   if (!leader) {
     notFound();
