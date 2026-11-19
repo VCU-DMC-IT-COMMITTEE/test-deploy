@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 
 type ApiContext = {
-  params: {
+  params: Promise<{
     path?: string[];
-  };
+  }>;
 };
 
-export function GET(_request: Request, context: ApiContext) {
-  const path = context.params.path?.join("/") ?? "";
+export async function GET(_request: Request, { params }: ApiContext) {
+  const path = (await params).path?.join("/") ?? "";
 
   if (
     path === "courses" ||
