@@ -885,7 +885,8 @@ export default function ProgramsPage() {
                     <div className="grid grid-cols-7 border-y border-yellow-400/20 bg-zinc-950 text-center font-['PolySans'] text-[0.58rem] font-black uppercase tracking-[0.12em] text-yellow-500/70 sm:text-xs">
                       {weekDays.map((day) => (
                         <div key={day} className="py-4">
-                          {day}
+                          <span className="sm:hidden">{day.slice(0,3)}</span>
+                          <span className="hidden sm:inline">{day}</span>
                         </div>
                       ))}
                     </div>
