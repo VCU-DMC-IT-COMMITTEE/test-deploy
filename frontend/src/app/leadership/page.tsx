@@ -38,7 +38,7 @@ export default function LeadershipPage() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f3f3f1] to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-7xl">
-          <h1 className="font-['PolySans'] max-w-5xl text-6xl font-black leading-none md:text-8xl">
+          <h1 className="font-['PolySans'] max-w-5xl text-4xl font-black leading-none sm:text-6xl md:text-8xl">
             Meet the people guiding DMC.
           </h1>
           <p className="font-['PolySans'] mt-8 max-w-2xl text-xl leading-8 text-zinc-300">
@@ -52,7 +52,7 @@ export default function LeadershipPage() {
       <section className="px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="font-['PolySans'] text-5xl font-black leading-none md:text-7xl">
+            <h2 className="font-['PolySans'] text-3xl font-black leading-none sm:text-5xl md:text-7xl">
               Leadership
             </h2>
             <p className="font-['PolySans'] mt-6 max-w-2xl text-xl leading-8 text-zinc-700">
